@@ -39,13 +39,13 @@ npm test
 ---
 
 ## 📁 Project Structure
-
+```
 ├── helpers/ # Utility functions for API requests
 ├── tests/ # Test cases for various API endpoints
 ├── jest.config.js # Jest configuration file
 ├── package.json # Project metadata and dependencies
 └── package-lock.json # Exact versions of installed packages
-
+```
 
 ---
 
