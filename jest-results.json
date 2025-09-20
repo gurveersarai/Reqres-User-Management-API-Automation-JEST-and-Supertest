@@ -1,0 +1,459 @@
+{
+  "numFailedTestSuites": 0,
+  "numFailedTests": 0,
+  "numPassedTestSuites": 4,
+  "numPassedTests": 17,
+  "numPendingTestSuites": 0,
+  "numPendingTests": 0,
+  "numRuntimeErrorTestSuites": 0,
+  "numTodoTests": 0,
+  "numTotalTestSuites": 4,
+  "numTotalTests": 17,
+  "openHandles": [],
+  "snapshot": {
+    "added": 0,
+    "didUpdate": false,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0
+  },
+  "startTime": 1758364192963,
+  "success": false,
+  "testResults": [
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 3,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1758364194228,
+        "loadTestEnvironmentEnd": 1758364193201,
+        "loadTestEnvironmentStart": 1758364193095,
+        "runtime": 1026,
+        "setupAfterEnvEnd": 1758364193512,
+        "setupAfterEnvStart": 1758364193512,
+        "setupFilesEnd": 1758364193202,
+        "setupFilesStart": 1758364193202,
+        "slow": false,
+        "start": 1758364193202
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "/home/runner/work/Reqres-User-Management-API-Automation-JEST-and-Supertest/Reqres-User-Management-API-Automation-JEST-and-Supertest/tests/resources.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Resources API Tests"
+          ],
+          "duration": 132,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Resources API Tests GET - list of resources",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758364193876,
+          "status": "passed",
+          "title": "GET - list of resources"
+        },
+        {
+          "ancestorTitles": [
+            "Resources API Tests"
+          ],
+          "duration": 35,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Resources API Tests GET - Access Single Resource",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1758364194008,
+          "status": "passed",
+          "title": "GET - Access Single Resource"
+        },
+        {
+          "ancestorTitles": [
+            "Resources API Tests"
+          ],
+          "duration": 183,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Resources API Tests GET - Access Invalid Resource",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194043,
+          "status": "passed",
+          "title": "GET - Access Invalid Resource"
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 5,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1758364194602,
+        "loadTestEnvironmentEnd": 1758364193205,
+        "loadTestEnvironmentStart": 1758364193105,
+        "runtime": 1396,
+        "setupAfterEnvEnd": 1758364193501,
+        "setupAfterEnvStart": 1758364193501,
+        "setupFilesEnd": 1758364193206,
+        "setupFilesStart": 1758364193206,
+        "slow": false,
+        "start": 1758364193206
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "/home/runner/work/Reqres-User-Management-API-Automation-JEST-and-Supertest/Reqres-User-Management-API-Automation-JEST-and-Supertest/tests/register.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 231,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Register a new user successfully",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758364193880,
+          "status": "passed",
+          "title": "POST - Register a new user successfully"
+        },
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 175,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Attempt to register with undefined user",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194111,
+          "status": "passed",
+          "title": "POST - Attempt to register with undefined user"
+        },
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 107,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Attempt to register with a missing password",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194286,
+          "status": "passed",
+          "title": "POST - Attempt to register with a missing password"
+        },
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 105,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Attempt to register with a missing email",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194393,
+          "status": "passed",
+          "title": "POST - Attempt to register with a missing email"
+        },
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 103,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Attempt to register with a missing email and password",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194498,
+          "status": "passed",
+          "title": "POST - Attempt to register with a missing email and password"
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 2,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1758364194608,
+        "loadTestEnvironmentEnd": 1758364194250,
+        "loadTestEnvironmentStart": 1758364194247,
+        "runtime": 358,
+        "setupAfterEnvEnd": 1758364194320,
+        "setupAfterEnvStart": 1758364194320,
+        "setupFilesEnd": 1758364194250,
+        "setupFilesStart": 1758364194250,
+        "slow": false,
+        "start": 1758364194250
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "/home/runner/work/Reqres-User-Management-API-Automation-JEST-and-Supertest/Reqres-User-Management-API-Automation-JEST-and-Supertest/tests/login.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Login API Test"
+          ],
+          "duration": 127,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Login API Test POST - Login Successfully",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194371,
+          "status": "passed",
+          "title": "POST - Login Successfully"
+        },
+        {
+          "ancestorTitles": [
+            "Login API Test"
+          ],
+          "duration": 108,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Login API Test POST - Login Successfully",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194498,
+          "status": "passed",
+          "title": "POST - Login Successfully"
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 7,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1758364194831,
+        "loadTestEnvironmentEnd": 1758364193208,
+        "loadTestEnvironmentStart": 1758364193090,
+        "runtime": 1621,
+        "setupAfterEnvEnd": 1758364193569,
+        "setupAfterEnvStart": 1758364193569,
+        "setupFilesEnd": 1758364193210,
+        "setupFilesStart": 1758364193210,
+        "slow": false,
+        "start": 1758364193210
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "/home/runner/work/Reqres-User-Management-API-Automation-JEST-and-Supertest/Reqres-User-Management-API-Automation-JEST-and-Supertest/tests/users.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 78,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests GET - list of users",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364193946,
+          "status": "passed",
+          "title": "GET - list of users"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 37,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests GET - Single User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758364194025,
+          "status": "passed",
+          "title": "GET - Single User"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 177,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests GET - Single User Not Found",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194062,
+          "status": "passed",
+          "title": "GET - Single User Not Found"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 193,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests POST - Create User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758364194239,
+          "status": "passed",
+          "title": "POST - Create User"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 114,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests GET - Retrieve ID of an Existing User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194432,
+          "status": "passed",
+          "title": "GET - Retrieve ID of an Existing User"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 183,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests PUT - Update User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758364194546,
+          "status": "passed",
+          "title": "PUT - Update User"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 101,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests DELETE - Delete User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758364194729,
+          "status": "passed",
+          "title": "DELETE - Delete User"
+        }
+      ],
+      "failureMessage": null
+    }
+  ],
+  "wasInterrupted": false
+}
