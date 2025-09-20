@@ -1,0 +1,40 @@
+name: API Test CI
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Jest tests with coverage and report
+        run: npm test -- --coverage
+
+      - name: Upload test stare report
+        uses: actions/upload-artifact@v3
+        with:
+          name: jest-stare-report
+          path: reports/jest-stare
+
+      -  name: Upload Coverage Report
+         uses: actions/upload-artifact@v3
+         with:
+            name: coverage-report
+            path: coverage
+          
+    
