@@ -40,7 +40,7 @@ jobs:
       - name: Deploy Jest Stare pages to Github Pages
         uses: peaceiris/actions-gh-pages@v6
         with:
-          github_token: ${{ secret.GITHUB_TOKEN }}
-          publish_dir: ./report/jest-stare
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./reports/jest-stare
           
     
