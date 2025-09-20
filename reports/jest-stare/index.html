@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>jest-stare!</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/diff2html.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jest-stare.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/holder.js"></script>
+    <script src="js/diff2html.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/view.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" id="navbar-title" href="#">jest-stare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="coverage-link" class="nav-link disabled" href="#">Coverage</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="onoff-switch mr-sm-2 ml-sm-2">
+                            <input type="checkbox" name="off-switch" class="off-switch-checkbox" id="lab-passoff-switch" checked>
+                            <label class="onoff-switch-label" for="lab-passoff-switch">
+                                <span class="pass off-switch-inner"></span>
+                                <span class="off-switch-switch"></span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="onoff-switch mr-sm-2 ml-sm-2">
+                            <input type="checkbox" name="off-switch" class="off-switch-checkbox" id="lab-failoff-switch" checked>
+                            <label class="onoff-switch-label" for="lab-failoff-switch">
+                                <span class="fail off-switch-inner"></span>
+                                <span class="off-switch-switch"></span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="onoff-switch mr-sm-2 ml-sm-2">
+                            <input type="checkbox" name="off-switch" class="off-switch-checkbox" id="lab-pendingoff-switch" checked>
+                            <label class="onoff-switch-label" for="lab-pendingoff-switch">
+                                <span class="pending off-switch-inner"></span>
+                                <span class="off-switch-switch"></span>
+                            </label>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="onoff-switch mr-sm-2 ml-sm-2">
+                            <input type="checkbox" name="off-switch" class="off-switch-checkbox" id="lab-todooff-switch" checked>
+                            <label class="onoff-switch-label" for="lab-todooff-switch">
+                                <span class="todo off-switch-inner"></span>
+                                <span class="off-switch-switch"></span>
+                            </label>
+                        </div>
+                    </li>
+                </ul>
+                <!-- <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" disabled>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" disabled>Search</button>
+                </form> -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+
+        <h1 class="mt-5"></h1>
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+                <canvas id="test-suites-canvas" width="100" height="100"></canvas>
+                <h2>Test Suites</h2>
+                <div class="list-group">
+                    <p id="test-suites-results" class="list-group-item list-group-item-action">4 passed, 4 total</p>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <canvas id="tests-canvas" width="100" height="100"></canvas>
+                <h2>Tests</h2>
+                <div class="list-group">
+                    <p id="tests-results" class="list-group-item list-group-item-action">17 passed, 17 total</p>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+            <div class="col-lg-4" id="snapshots-group">
+                <canvas id="snapshots-canvas" width="100" height="100"></canvas>
+                <h2>Snapshots</h2>
+                <div class="list-group">
+                    <p id="snapshots-results" class="list-group-item list-group-item-action">0 passed, 0 total</p>
+                </div>
+            </div>
+            <!-- /.col-lg-4 -->
+        </div>
+
+        <div id="loading-info" class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+                aria-valuemax="100" style="width: 100%"></div>
+        </div>
+
+        <div class="d-none" id="test-summary"></div>
+        <div class="d-none" id="test-config">{
+  &quot;resultDir&quot;: &quot;reports&#x2F;jest-stare&#x2F;&quot;,
+  &quot;reportTitle&quot;: &quot;Reqres API Test Report&quot;,
+  &quot;additionalResultsProcessors&quot;: [],
+  &quot;resultHtml&quot;: &quot;index.html&quot;,
+  &quot;resultJson&quot;: &quot;jest-results.json&quot;
+}</div>
+        <div id="accordion">
+            <div class="d-none" id="test-results">{
+  &quot;numFailedTestSuites&quot;: 0,
+  &quot;numFailedTests&quot;: 0,
+  &quot;numPassedTestSuites&quot;: 4,
+  &quot;numPassedTests&quot;: 17,
+  &quot;numPendingTestSuites&quot;: 0,
+  &quot;numPendingTests&quot;: 0,
+  &quot;numRuntimeErrorTestSuites&quot;: 0,
+  &quot;numTodoTests&quot;: 0,
+  &quot;numTotalTestSuites&quot;: 4,
+  &quot;numTotalTests&quot;: 17,
+  &quot;openHandles&quot;: [],
+  &quot;snapshot&quot;: {
+    &quot;added&quot;: 0,
+    &quot;didUpdate&quot;: false,
+    &quot;failure&quot;: false,
+    &quot;filesAdded&quot;: 0,
+    &quot;filesRemoved&quot;: 0,
+    &quot;filesRemovedList&quot;: [],
+    &quot;filesUnmatched&quot;: 0,
+    &quot;filesUpdated&quot;: 0,
+    &quot;matched&quot;: 0,
+    &quot;total&quot;: 0,
+    &quot;unchecked&quot;: 0,
+    &quot;uncheckedKeysByFile&quot;: [],
+    &quot;unmatched&quot;: 0,
+    &quot;updated&quot;: 0
+  },
+  &quot;startTime&quot;: 1758361138116,
+  &quot;success&quot;: false,
+  &quot;testResults&quot;: [
+    {
+      &quot;leaks&quot;: false,
+      &quot;numFailingTests&quot;: 0,
+      &quot;numPassingTests&quot;: 2,
+      &quot;numPendingTests&quot;: 0,
+      &quot;numTodoTests&quot;: 0,
+      &quot;openHandles&quot;: [],
+      &quot;perfStats&quot;: {
+        &quot;end&quot;: 1758361140436,
+        &quot;loadTestEnvironmentEnd&quot;: 1758361138734,
+        &quot;loadTestEnvironmentStart&quot;: 1758361138622,
+        &quot;runtime&quot;: 1700,
+        &quot;setupAfterEnvEnd&quot;: 1758361139323,
+        &quot;setupAfterEnvStart&quot;: 1758361139323,
+        &quot;setupFilesEnd&quot;: 1758361138736,
+        &quot;setupFilesStart&quot;: 1758361138736,
+        &quot;slow&quot;: false,
+        &quot;start&quot;: 1758361138736
+      },
+      &quot;skipped&quot;: false,
+      &quot;snapshot&quot;: {
+        &quot;added&quot;: 0,
+        &quot;fileDeleted&quot;: false,
+        &quot;matched&quot;: 0,
+        &quot;unchecked&quot;: 0,
+        &quot;uncheckedKeys&quot;: [],
+        &quot;unmatched&quot;: 0,
+        &quot;updated&quot;: 0
+      },
+      &quot;testFilePath&quot;: &quot;C:\\Users\\guvsa\\ReqRes API Automation\\tests\\login.test.js&quot;,
+      &quot;testResults&quot;: [
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Login API Test&quot;
+          ],
+          &quot;duration&quot;: 189,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Login API Test POST - Login Successfully&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140175,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;POST - Login Successfully&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Login API Test&quot;
+          ],
+          &quot;duration&quot;: 69,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Login API Test POST - Login Successfully&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140365,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;POST - Login Successfully&quot;
+        }
+      ],
+      &quot;failureMessage&quot;: null
+    },
+    {
+      &quot;leaks&quot;: false,
+      &quot;numFailingTests&quot;: 0,
+      &quot;numPassingTests&quot;: 3,
+      &quot;numPendingTests&quot;: 0,
+      &quot;numTodoTests&quot;: 0,
+      &quot;openHandles&quot;: [],
+      &quot;perfStats&quot;: {
+        &quot;end&quot;: 1758361140537,
+        &quot;loadTestEnvironmentEnd&quot;: 1758361138728,
+        &quot;loadTestEnvironmentStart&quot;: 1758361138622,
+        &quot;runtime&quot;: 1807,
+        &quot;setupAfterEnvEnd&quot;: 1758361139323,
+        &quot;setupAfterEnvStart&quot;: 1758361139323,
+        &quot;setupFilesEnd&quot;: 1758361138730,
+        &quot;setupFilesStart&quot;: 1758361138730,
+        &quot;slow&quot;: false,
+        &quot;start&quot;: 1758361138730
+      },
+      &quot;skipped&quot;: false,
+      &quot;snapshot&quot;: {
+        &quot;added&quot;: 0,
+        &quot;fileDeleted&quot;: false,
+        &quot;matched&quot;: 0,
+        &quot;unchecked&quot;: 0,
+        &quot;uncheckedKeys&quot;: [],
+        &quot;unmatched&quot;: 0,
+        &quot;updated&quot;: 0
+      },
+      &quot;testFilePath&quot;: &quot;C:\\Users\\guvsa\\ReqRes API Automation\\tests\\resources.test.js&quot;,
+      &quot;testResults&quot;: [
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Resources API Tests&quot;
+          ],
+          &quot;duration&quot;: 178,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Resources API Tests GET - list of resources&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 3,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140175,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;GET - list of resources&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Resources API Tests&quot;
+          ],
+          &quot;duration&quot;: 88,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Resources API Tests GET - Access Single Resource&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 4,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140353,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;GET - Access Single Resource&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Resources API Tests&quot;
+          ],
+          &quot;duration&quot;: 94,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Resources API Tests GET - Access Invalid Resource&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140441,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;GET - Access Invalid Resource&quot;
+        }
+      ],
+      &quot;failureMessage&quot;: null
+    },
+    {
+      &quot;leaks&quot;: false,
+      &quot;numFailingTests&quot;: 0,
+      &quot;numPassingTests&quot;: 5,
+      &quot;numPendingTests&quot;: 0,
+      &quot;numTodoTests&quot;: 0,
+      &quot;openHandles&quot;: [],
+      &quot;perfStats&quot;: {
+        &quot;end&quot;: 1758361140679,
+        &quot;loadTestEnvironmentEnd&quot;: 1758361138717,
+        &quot;loadTestEnvironmentStart&quot;: 1758361138610,
+        &quot;runtime&quot;: 1961,
+        &quot;setupAfterEnvEnd&quot;: 1758361139318,
+        &quot;setupAfterEnvStart&quot;: 1758361139318,
+        &quot;setupFilesEnd&quot;: 1758361138718,
+        &quot;setupFilesStart&quot;: 1758361138718,
+        &quot;slow&quot;: false,
+        &quot;start&quot;: 1758361138718
+      },
+      &quot;skipped&quot;: false,
+      &quot;snapshot&quot;: {
+        &quot;added&quot;: 0,
+        &quot;fileDeleted&quot;: false,
+        &quot;matched&quot;: 0,
+        &quot;unchecked&quot;: 0,
+        &quot;uncheckedKeys&quot;: [],
+        &quot;unmatched&quot;: 0,
+        &quot;updated&quot;: 0
+      },
+      &quot;testFilePath&quot;: &quot;C:\\Users\\guvsa\\ReqRes API Automation\\tests\\register.test.js&quot;,
+      &quot;testResults&quot;: [
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Register API Tests&quot;
+          ],
+          &quot;duration&quot;: 192,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Register API Tests POST - Register a new user successfully&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 3,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140171,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;POST - Register a new user successfully&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Register API Tests&quot;
+          ],
+          &quot;duration&quot;: 87,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Register API Tests POST - Attempt to register with undefined user&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140364,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;POST - Attempt to register with undefined user&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Register API Tests&quot;
+          ],
+          &quot;duration&quot;: 77,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Register API Tests POST - Attempt to register with a missing password&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140452,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;POST - Attempt to register with a missing password&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Register API Tests&quot;
+          ],
+          &quot;duration&quot;: 83,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Register API Tests POST - Attempt to register with a missing email&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140529,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;POST - Attempt to register with a missing email&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Register API Tests&quot;
+          ],
+          &quot;duration&quot;: 66,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Register API Tests POST - Attempt to register with a missing email and password&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140612,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;POST - Attempt to register with a missing email and password&quot;
+        }
+      ],
+      &quot;failureMessage&quot;: null
+    },
+    {
+      &quot;leaks&quot;: false,
+      &quot;numFailingTests&quot;: 0,
+      &quot;numPassingTests&quot;: 7,
+      &quot;numPendingTests&quot;: 0,
+      &quot;numTodoTests&quot;: 0,
+      &quot;openHandles&quot;: [],
+      &quot;perfStats&quot;: {
+        &quot;end&quot;: 1758361140874,
+        &quot;loadTestEnvironmentEnd&quot;: 1758361138725,
+        &quot;loadTestEnvironmentStart&quot;: 1758361138610,
+        &quot;runtime&quot;: 2148,
+        &quot;setupAfterEnvEnd&quot;: 1758361139317,
+        &quot;setupAfterEnvStart&quot;: 1758361139317,
+        &quot;setupFilesEnd&quot;: 1758361138726,
+        &quot;setupFilesStart&quot;: 1758361138726,
+        &quot;slow&quot;: false,
+        &quot;start&quot;: 1758361138726
+      },
+      &quot;skipped&quot;: false,
+      &quot;snapshot&quot;: {
+        &quot;added&quot;: 0,
+        &quot;fileDeleted&quot;: false,
+        &quot;matched&quot;: 0,
+        &quot;unchecked&quot;: 0,
+        &quot;uncheckedKeys&quot;: [],
+        &quot;unmatched&quot;: 0,
+        &quot;updated&quot;: 0
+      },
+      &quot;testFilePath&quot;: &quot;C:\\Users\\guvsa\\ReqRes API Automation\\tests\\users.test.js&quot;,
+      &quot;testResults&quot;: [
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Users API Tests&quot;
+          ],
+          &quot;duration&quot;: 142,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Users API Tests GET - list of users&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140170,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;GET - list of users&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Users API Tests&quot;
+          ],
+          &quot;duration&quot;: 91,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Users API Tests GET - Single User&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 3,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140313,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;GET - Single User&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Users API Tests&quot;
+          ],
+          &quot;duration&quot;: 95,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Users API Tests GET - Single User Not Found&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140404,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;GET - Single User Not Found&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Users API Tests&quot;
+          ],
+          &quot;duration&quot;: 133,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Users API Tests POST - Create User&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 3,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140499,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;POST - Create User&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Users API Tests&quot;
+          ],
+          &quot;duration&quot;: 94,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Users API Tests GET - Retrieve ID of an Existing User&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140632,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;GET - Retrieve ID of an Existing User&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Users API Tests&quot;
+          ],
+          &quot;duration&quot;: 86,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Users API Tests PUT - Update User&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 3,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140726,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;PUT - Update User&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Users API Tests&quot;
+          ],
+          &quot;duration&quot;: 60,
+          &quot;failing&quot;: false,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Users API Tests DELETE - Delete User&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;startAt&quot;: 1758361140813,
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;DELETE - Delete User&quot;
+        }
+      ],
+      &quot;failureMessage&quot;: null
+    }
+  ],
+  &quot;wasInterrupted&quot;: false
+}</div>
+        </div>
+        <div class="d-none" id="test-global-config">{
+  &quot;bail&quot;: 0,
+  &quot;changedFilesWithAncestor&quot;: false,
+  &quot;ci&quot;: false,
+  &quot;collectCoverage&quot;: false,
+  &quot;collectCoverageFrom&quot;: [],
+  &quot;coverageDirectory&quot;: &quot;C:\\Users\\guvsa\\ReqRes API Automation\\coverage&quot;,
+  &quot;coverageProvider&quot;: &quot;babel&quot;,
+  &quot;coverageReporters&quot;: [
+    &quot;json&quot;,
+    &quot;text&quot;,
+    &quot;lcov&quot;,
+    &quot;clover&quot;
+  ],
+  &quot;detectLeaks&quot;: false,
+  &quot;detectOpenHandles&quot;: false,
+  &quot;errorOnDeprecated&quot;: false,
+  &quot;expand&quot;: false,
+  &quot;findRelatedTests&quot;: false,
+  &quot;forceExit&quot;: false,
+  &quot;json&quot;: false,
+  &quot;lastCommit&quot;: false,
+  &quot;listTests&quot;: false,
+  &quot;logHeapUsage&quot;: false,
+  &quot;maxConcurrency&quot;: 5,
+  &quot;maxWorkers&quot;: 15,
+  &quot;noStackTrace&quot;: false,
+  &quot;nonFlagArgs&quot;: [],
+  &quot;notify&quot;: false,
+  &quot;notifyMode&quot;: &quot;failure-change&quot;,
+  &quot;onlyChanged&quot;: false,
+  &quot;onlyFailures&quot;: false,
+  &quot;openHandlesTimeout&quot;: 1000,
+  &quot;passWithNoTests&quot;: false,
+  &quot;projects&quot;: [],
+  &quot;reporters&quot;: [
+    [
+      &quot;default&quot;,
+      {}
+    ],
+    [
+      &quot;C:\\Users\\guvsa\\ReqRes API Automation\\node_modules\\jest-stare\\lib\\index.js&quot;,
+      {
+        &quot;resultDir&quot;: &quot;reports&#x2F;jest-stare&#x2F;&quot;,
+        &quot;reportTitle&quot;: &quot;Reqres API Test Report&quot;,
+        &quot;additionalResultsProcessors&quot;: [],
+        &quot;resultHtml&quot;: &quot;index.html&quot;,
+        &quot;resultJson&quot;: &quot;jest-results.json&quot;
+      }
+    ]
+  ],
+  &quot;rootDir&quot;: &quot;C:\\Users\\guvsa\\ReqRes API Automation&quot;,
+  &quot;runInBand&quot;: false,
+  &quot;runTestsByPath&quot;: false,
+  &quot;seed&quot;: -1879135613,
+  &quot;skipFilter&quot;: false,
+  &quot;snapshotFormat&quot;: {
+    &quot;escapeString&quot;: false,
+    &quot;printBasicPrototype&quot;: false
+  },
+  &quot;testFailureExitCode&quot;: 1,
+  &quot;testPathPatterns&quot;: {
+    &quot;patterns&quot;: [],
+    &quot;type&quot;: &quot;TestPathPatterns&quot;
+  },
+  &quot;testSequencer&quot;: &quot;C:\\Users\\guvsa\\ReqRes API Automation\\node_modules\\@jest\\test-sequencer\\build\\index.js&quot;,
+  &quot;testTimeout&quot;: 30000,
+  &quot;updateSnapshot&quot;: &quot;new&quot;,
+  &quot;useStderr&quot;: false,
+  &quot;verbose&quot;: true,
+  &quot;waitForUnhandledRejections&quot;: false,
+  &quot;watch&quot;: false,
+  &quot;watchAll&quot;: false,
+  &quot;watchman&quot;: true,
+  &quot;workerThreads&quot;: false
+}</div>
+
+    </main>
+    <hr>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">jest-stare 2022</span>
+        </div>
+    </footer>
+</body>
+
+</html>
+

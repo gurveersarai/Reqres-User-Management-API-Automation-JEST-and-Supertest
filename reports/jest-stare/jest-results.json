@@ -1,0 +1,459 @@
+{
+  "numFailedTestSuites": 0,
+  "numFailedTests": 0,
+  "numPassedTestSuites": 4,
+  "numPassedTests": 17,
+  "numPendingTestSuites": 0,
+  "numPendingTests": 0,
+  "numRuntimeErrorTestSuites": 0,
+  "numTodoTests": 0,
+  "numTotalTestSuites": 4,
+  "numTotalTests": 17,
+  "openHandles": [],
+  "snapshot": {
+    "added": 0,
+    "didUpdate": false,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0
+  },
+  "startTime": 1758361138116,
+  "success": false,
+  "testResults": [
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 2,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1758361140436,
+        "loadTestEnvironmentEnd": 1758361138734,
+        "loadTestEnvironmentStart": 1758361138622,
+        "runtime": 1700,
+        "setupAfterEnvEnd": 1758361139323,
+        "setupAfterEnvStart": 1758361139323,
+        "setupFilesEnd": 1758361138736,
+        "setupFilesStart": 1758361138736,
+        "slow": false,
+        "start": 1758361138736
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "C:\\Users\\guvsa\\ReqRes API Automation\\tests\\login.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Login API Test"
+          ],
+          "duration": 189,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Login API Test POST - Login Successfully",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140175,
+          "status": "passed",
+          "title": "POST - Login Successfully"
+        },
+        {
+          "ancestorTitles": [
+            "Login API Test"
+          ],
+          "duration": 69,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Login API Test POST - Login Successfully",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140365,
+          "status": "passed",
+          "title": "POST - Login Successfully"
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 3,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1758361140537,
+        "loadTestEnvironmentEnd": 1758361138728,
+        "loadTestEnvironmentStart": 1758361138622,
+        "runtime": 1807,
+        "setupAfterEnvEnd": 1758361139323,
+        "setupAfterEnvStart": 1758361139323,
+        "setupFilesEnd": 1758361138730,
+        "setupFilesStart": 1758361138730,
+        "slow": false,
+        "start": 1758361138730
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "C:\\Users\\guvsa\\ReqRes API Automation\\tests\\resources.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Resources API Tests"
+          ],
+          "duration": 178,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Resources API Tests GET - list of resources",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758361140175,
+          "status": "passed",
+          "title": "GET - list of resources"
+        },
+        {
+          "ancestorTitles": [
+            "Resources API Tests"
+          ],
+          "duration": 88,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Resources API Tests GET - Access Single Resource",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 4,
+          "retryReasons": [],
+          "startAt": 1758361140353,
+          "status": "passed",
+          "title": "GET - Access Single Resource"
+        },
+        {
+          "ancestorTitles": [
+            "Resources API Tests"
+          ],
+          "duration": 94,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Resources API Tests GET - Access Invalid Resource",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140441,
+          "status": "passed",
+          "title": "GET - Access Invalid Resource"
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 5,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1758361140679,
+        "loadTestEnvironmentEnd": 1758361138717,
+        "loadTestEnvironmentStart": 1758361138610,
+        "runtime": 1961,
+        "setupAfterEnvEnd": 1758361139318,
+        "setupAfterEnvStart": 1758361139318,
+        "setupFilesEnd": 1758361138718,
+        "setupFilesStart": 1758361138718,
+        "slow": false,
+        "start": 1758361138718
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "C:\\Users\\guvsa\\ReqRes API Automation\\tests\\register.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 192,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Register a new user successfully",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758361140171,
+          "status": "passed",
+          "title": "POST - Register a new user successfully"
+        },
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 87,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Attempt to register with undefined user",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140364,
+          "status": "passed",
+          "title": "POST - Attempt to register with undefined user"
+        },
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 77,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Attempt to register with a missing password",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140452,
+          "status": "passed",
+          "title": "POST - Attempt to register with a missing password"
+        },
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 83,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Attempt to register with a missing email",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140529,
+          "status": "passed",
+          "title": "POST - Attempt to register with a missing email"
+        },
+        {
+          "ancestorTitles": [
+            "Register API Tests"
+          ],
+          "duration": 66,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Register API Tests POST - Attempt to register with a missing email and password",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140612,
+          "status": "passed",
+          "title": "POST - Attempt to register with a missing email and password"
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 7,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1758361140874,
+        "loadTestEnvironmentEnd": 1758361138725,
+        "loadTestEnvironmentStart": 1758361138610,
+        "runtime": 2148,
+        "setupAfterEnvEnd": 1758361139317,
+        "setupAfterEnvStart": 1758361139317,
+        "setupFilesEnd": 1758361138726,
+        "setupFilesStart": 1758361138726,
+        "slow": false,
+        "start": 1758361138726
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "C:\\Users\\guvsa\\ReqRes API Automation\\tests\\users.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 142,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests GET - list of users",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140170,
+          "status": "passed",
+          "title": "GET - list of users"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 91,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests GET - Single User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758361140313,
+          "status": "passed",
+          "title": "GET - Single User"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 95,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests GET - Single User Not Found",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140404,
+          "status": "passed",
+          "title": "GET - Single User Not Found"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 133,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests POST - Create User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758361140499,
+          "status": "passed",
+          "title": "POST - Create User"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 94,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests GET - Retrieve ID of an Existing User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140632,
+          "status": "passed",
+          "title": "GET - Retrieve ID of an Existing User"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 86,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests PUT - Update User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "startAt": 1758361140726,
+          "status": "passed",
+          "title": "PUT - Update User"
+        },
+        {
+          "ancestorTitles": [
+            "Users API Tests"
+          ],
+          "duration": 60,
+          "failing": false,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Users API Tests DELETE - Delete User",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "startAt": 1758361140813,
+          "status": "passed",
+          "title": "DELETE - Delete User"
+        }
+      ],
+      "failureMessage": null
+    }
+  ],
+  "wasInterrupted": false
+}
